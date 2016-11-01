@@ -50,19 +50,16 @@ func route(w http.ResponseWriter, req *http.Request) {
 		fmt.Printf("%s\n", req)
 		body, err := ioutil.ReadAll(req.Body)
 		if err != nil {
-			fmt.Printf("errr")
 			log.Println(err)
 			return
 		}
 		var data Data
 		err = json.Unmarshal(body, &data)
 		if err != nil {
-			fmt.Printf("\n%s",err)
+			log.Println(err)
+			return
 		}
-		//log.Println("\n\n",data.Entry[0].Messaging[0].Message.Text)
-	//	log.Println(string(body))
 		message_handler(data)
-	//	fmt.Printf("\n\n%s",body)
 	}
 	w.WriteHeader(200)
 }
