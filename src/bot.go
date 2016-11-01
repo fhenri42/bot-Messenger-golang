@@ -56,7 +56,7 @@ func call_recast(msg string) string  {
 		log.Println(err)
 		return "err"
 	}
-	req.Header.Set("Authorization", fmt.Sprintf("Token 63a76631b2e098ff3e3fcd002769f5bf"))
+	req.Header.Set("Authorization", fmt.Sprintf("Token ADD_YOUR_TOKEN"))
 	resp, err := client.Do(req)
 	if err != nil {
 		log.Println(err)
