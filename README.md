@@ -1,3 +1,4 @@
+# README IS NOT UP TO DATE ! 
 # Start coding your bot: Recast.AI + Facebook messenger
 
 * Here, you'll learn how to build a bot with Facebook Messenger and Recast.AI.
@@ -102,7 +103,6 @@ git clone https://github.com/RecastAI/bot-messenger.git
 
 ## Your bot
 * incoming :)
-```
 * Have fun coding your bot! :)
 
 ## Author
