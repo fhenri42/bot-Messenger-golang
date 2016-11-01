@@ -1,58 +1,73 @@
 package main
 
-/*
-app.post('/webhook', (req, res) => {
-	const data = req.body
-	if (data.object === 'page') {
-		data.entry.forEach(pageEntry => {
-			pageEntry.messaging.forEach(messagingEvent => {
-				if (messagingEvent.message) {
-					if (!messagingEvent.message.is_echo) {
-						handleMessage(messagingEvent)
-					}
-				}
-			})
-		})
-		res.sendStatus(200)
-	}
-})
-*/
 import (
 	"fmt"
+	"log"
 	"net/http"
+	"io/ioutil"
+	"encoding/json"
 )
 
-func handler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Hi there, I love %s!", r.URL.Path[1:])
+type Data struct {
+	Entry []struct {
+		ID        int64 `json:"id,string"`
+		Messaging []struct {
+			Message struct {
+				Mid  string `json:"mid"`
+				Seq  int64  `json:"seq"`
+				Text string `json:"text"`
+			} `json:"message"`
+			Recipient struct {
+				ID int64 `json:"id,string"`
+			} `json:"recipient"`
+			Sender struct {
+				ID int64 `json:"id,string"`
+			} `json:"sender"`
+			Timestamp int64 `json:"timestamp"`
+		} `json:"messaging"`
+		Time int64 `json:"time"`
+	} `json:"entry"`
+	Object string `json:"object"`
 }
 
 func route(w http.ResponseWriter, req *http.Request) {
 
-	fmt.Printf("%s", req.Body)
-	w.WriteHeader(200)
-	return
-	token := req.FormValue("hub.verify_token")
-	mode := req.FormValue("hub.mode")
-	challenge := req.FormValue("hub.challenge")
+	if req.FormValue("hub.mode") == "subscribe" {
+		token := req.FormValue("hub.verify_token")
+		mode := req.FormValue("hub.mode")
+		challenge := req.FormValue("hub.challenge")
 
-	if (token == "123" && mode == "subscribe") {
-		w.Header().Set("Server", "A Go Web Server")
-		w.WriteHeader(200)
-		w.Write([]byte(challenge))
-		return
+		if (token == "123" && mode == "subscribe") {
+			w.Header().Set("Server", "A Go Web Server")
+			w.WriteHeader(200)
+			w.Write([]byte(challenge))
+			return
+		} else {
+			fmt.Printf("Your toke in not valid")
+		}
 	} else {
-		fmt.Printf("Your toke in not valid")
+		fmt.Printf("in the post\n")
+		fmt.Printf("%s\n", req)
+		body, err := ioutil.ReadAll(req.Body)
+		if err != nil {
+			fmt.Printf("errr")
+			log.Println(err)
+			return
+		}
+		var data Data
+		err = json.Unmarshal(body, &data)
+		if err != nil {
+			fmt.Printf("\n%s",err)
+		}
+		//log.Println("\n\n",data.Entry[0].Messaging[0].Message.Text)
+	//	log.Println(string(body))
+		message_handler(data)
+	//	fmt.Printf("\n\n%s",body)
 	}
-}
-
-func callRecast() {
-	fmt.Printf("i am in the function call recast\n")
-
+	w.WriteHeader(200)
 }
 
 func main() {
-	http.HandleFunc("/", handler)
 	http.HandleFunc("/webhook", route)
-	callRecast()
 	http.ListenAndServe(":8080", nil)
 }
