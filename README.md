@@ -1,4 +1,4 @@
-# README IS NOT UP TO DATE ! 
+# README IS NOT UP TO DATE !
 # Start coding your bot: Recast.AI + Facebook messenger
 
 * Here, you'll learn how to build a bot with Facebook Messenger and Recast.AI.
@@ -56,7 +56,7 @@
 
 ## Start your bot in local
 ```bash
-git clone https://github.com/RecastAI/bot-messenger.git
+git clone https://github.com/fhenri42/bot-Messenger-golang.git
 ```
 
 #### Ngrok
@@ -76,12 +76,14 @@ git clone https://github.com/RecastAI/bot-messenger.git
 * Copy your validationToken `The token of your Webhook`
 
 * Incoming :)
+
 ## Launching your Bot
 
 * make sure to have ngrok launched and the correct URL in you config file.
 
-* Incoming :)
-
+```bash
+ go run src/*.go
+```
 #### Config webhook
 
 * go back to the Facebook Developer page and add a new webhook.
@@ -102,11 +104,52 @@ git clone https://github.com/RecastAI/bot-messenger.git
 ![alt text][result]
 
 ## Your bot
-* incoming :)
+```go
+
+func call_recast(msg string) string  {
+	fmt.Printf("start call to recast")
+	client := &http.Client{}
+
+	form := url.Values{}
+	form.Add("text", msg)
+	req, err := http.NewRequest("POST","https://api.recast.ai/v2/converse" ,strings.NewReader(form.Encode()))
+	if err != nil {
+		log.Println(err)
+		return "err"
+	}
+	req.Header.Set("Authorization", fmt.Sprintf("Token ADD_YOUR_TOKEN"))
+	resp, err := client.Do(req)
+	if err != nil {
+		log.Println(err)
+		return "err"
+	}
+	body, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		log.Println(err)
+		return "err"
+	}
+	log.Println("\n \n ",string(body),"\n \n")
+	var rep RecastRep
+	err = json.Unmarshal(body, &rep)
+
+	if err != nil {
+		log.Println(err)
+		return "err"
+	}
+	return rep.Results.Action.Reply
+
+}
+
+func  message_handler(data Data) {
+	message := data.Entry[0].Messaging[0].Message.Text
+	recipient := data.Entry[0].Messaging[0].Sender.ID
+	msg := call_recast(message)
+	post_facebook(msg, recipient)
+}
+```
 * Have fun coding your bot! :)
 
 ## Author
 
 Henri Floren - Recast.AI
 henri.floren@recast.ai
-

@@ -37,7 +37,7 @@ func route(w http.ResponseWriter, req *http.Request) {
 		mode := req.FormValue("hub.mode")
 		challenge := req.FormValue("hub.challenge")
 
-		if (token == "123" && mode == "subscribe") {
+		if (token == "YOUR_TOKEN" && mode == "subscribe") {
 			w.Header().Set("Server", "A Go Web Server")
 			w.WriteHeader(200)
 			w.Write([]byte(challenge))
