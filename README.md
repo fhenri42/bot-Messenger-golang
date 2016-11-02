@@ -1,4 +1,4 @@
-# README is not up to date (messing the config file part :( )!
+# README is not up to date (messing the config file part)!
 # Start coding your bot: Recast.AI + Facebook messenger
 
 * Here, you'll learn how to build a bot with Facebook Messenger and Recast.AI.
