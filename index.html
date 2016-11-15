@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=640">
+
+    <link rel="stylesheet" href="stylesheets/core.css" media="screen">
+    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+
+    <script type="text/javascript" src="javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#main_content').headsmart()
+      })
+    </script>
+    <title>Bot-messenger-golang by fhenri42</title>
+  </head>
+
+  <body>
+    <a id="forkme_banner" href="https://github.com/fhenri42/bot-Messenger-golang">View on GitHub</a>
+    <div class="shell">
+
+      <header>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>Bot-messenger-golang</h1>
+            <h2></h2>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+      </header>
+
+      <section id="downloads">
+        <span class="inner">
+          <a href="https://github.com/fhenri42/bot-Messenger-golang/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/fhenri42/bot-Messenger-golang/tarball/master" class="tgz"><em>download</em> .TGZ</a>
+        </span>
+      </section>
+
+
+      <span class="banner-fix"></span>
+
+
+      <section id="main_content">
+        <h1>
+<a id="readme-is-not-up-to-date-messing-the-config-file-part" class="anchor" href="#readme-is-not-up-to-date-messing-the-config-file-part" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>README is not up to date (messing the config file part)!</h1>
+
+<h1>
+<a id="start-coding-your-bot-recastai--facebook-messenger" class="anchor" href="#start-coding-your-bot-recastai--facebook-messenger" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Start coding your bot: Recast.AI + Facebook messenger</h1>
+
+<ul>
+<li>Here, you'll learn how to build a bot with Facebook Messenger and Recast.AI.</li>
+</ul>
+
+<h2>
+<a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Requirements</h2>
+
+<ul>
+<li>Create an account on <a href="https://recast.ai/signup">Recast.AI</a>.</li>
+<li>Create an account on <a href="https://developers.facebook.com/">Facebook Developers</a>. (same account than your personal Facebook account)</li>
+</ul>
+
+<h2>
+<a id="set-up-your-recastai-account" class="anchor" href="#set-up-your-recastai-account" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Set up your Recast.AI account</h2>
+
+<h5>
+<a id="create-your-bot" class="anchor" href="#create-your-bot" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Create your bot</h5>
+
+<ul>
+<li>Log into your <a href="https://recast.ai/login">Recast.AI</a> account.</li>
+<li>Create a new bot.</li>
+</ul>
+
+<h5>
+<a id="get-your-token" class="anchor" href="#get-your-token" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Get your token</h5>
+
+<ul>
+<li>In your profile, click your bot.</li>
+<li>In the tab-menu, click on the the little screw.</li>
+<li>Here is the <code>request access token</code> you will need to configure your bot.</li>
+</ul>
+
+<h2>
+<a id="create-your-facebook-page" class="anchor" href="#create-your-facebook-page" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Create your facebook page</h2>
+
+<ul>
+<li>
+<a href="https://www.facebook.com/pages/create/?ref_type=logout_gear">Create your page</a>.</li>
+</ul>
+
+<p><img src="https://raw.githubusercontent.com/RecastAI/bot-messenger/master/ressources/S%C3%A9lection_021.png" alt="alt text" title="Creating you page"></p>
+
+<ul>
+<li>Choose the category of your page.</li>
+<li>Fill out the Facebook requirements step by step.</li>
+</ul>
+
+<p><img src="https://raw.githubusercontent.com/RecastAI/bot-messenger/master/ressources/S%C3%A9lection_022.png" alt="alt text" title="Steup of your page"></p>
+
+<h2>
+<a id="set-up-your-facebook-account" class="anchor" href="#set-up-your-facebook-account" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Set up your facebook account</h2>
+
+<ul>
+<li>Log on to your Facebook Developers account.</li>
+<li>Create a new Facebook app.</li>
+</ul>
+
+<p><img src="https://raw.githubusercontent.com/RecastAI/bot-messenger/master/ressources/S%C3%A9lection_028.png" alt="alt text" title="first page"></p>
+
+<ul>
+<li>Get your app secret and ID <a href="https://developers.facebook.com/apps/258158857911674/dashboard/">Dashboard</a>.</li>
+</ul>
+
+<p><img src="https://raw.githubusercontent.com/RecastAI/bot-messenger/master/ressources/S%C3%A9lection_025.png" alt="alt text" title="Creating you page"></p>
+
+<ul>
+<li>Get your page Token <a href="https://developers.facebook.com/apps/258158857911674/messenger/">Messanger</a>.</li>
+</ul>
+
+<p><img src="https://raw.githubusercontent.com/RecastAI/bot-messenger/master/ressources/S%C3%A9lection_026.png" alt="alt text" title="Creating you page"></p>
+
+<h2>
+<a id="start-your-bot-in-local" class="anchor" href="#start-your-bot-in-local" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Start your bot in local</h2>
+
+<div class="highlight highlight-source-shell"><pre>git clone https://github.com/fhenri42/bot-Messenger-golang.git</pre></div>
+
+<h4>
+<a id="ngrok" class="anchor" href="#ngrok" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Ngrok</h4>
+
+<ul>
+<li>Download the appropriate version of <a href="https://ngrok.com/download">Ngrok</a>.</li>
+<li>Open a new tab in your terminal:</li>
+</ul>
+
+<pre><code>./ngrok http 5000
+</code></pre>
+
+<ul>
+<li>Copy past the <code>https://*******ngrok.io</code> you get, you will need it for the next step.</li>
+<li>Leave your Ngrok serveur running.</li>
+</ul>
+
+<h2>
+<a id="complete-the-configgo" class="anchor" href="#complete-the-configgo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Complete the config.go</h2>
+
+<ul>
+<li>Copy your Recast.AI <code>Recast.AI access token</code>
+</li>
+<li>Copy your page access Token <code>Token of your Page</code>
+</li>
+<li><p>Copy your validationToken <code>The token of your Webhook</code></p></li>
+<li><p>Incoming :)</p></li>
+</ul>
+
+<h2>
+<a id="launching-your-bot" class="anchor" href="#launching-your-bot" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Launching your Bot</h2>
+
+<ul>
+<li>make sure to have ngrok launched and the correct URL in you config file.</li>
+</ul>
+
+<div class="highlight highlight-source-shell"><pre> go run src/<span class="pl-k">*</span>.go</pre></div>
+
+<h4>
+<a id="config-webhook" class="anchor" href="#config-webhook" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Config webhook</h4>
+
+<ul>
+<li>go back to the Facebook Developer page and add a new webhook.</li>
+</ul>
+
+<p><img src="https://blog.recast.ai/wp-content/uploads/2016/09/S%C3%A9lection_020.png" alt="alt text" title="Webhook page"></p>
+
+<ul>
+<li>Subscribe your page to the webhook you just created.</li>
+</ul>
+
+<p><img src="https://raw.githubusercontent.com/RecastAI/bot-messenger/master/ressources/S%C3%A9lection_024.png" alt="alt text" title="Subscribe page"></p>
+
+<h2>
+<a id="result" class="anchor" href="#result" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Result</h2>
+
+<p><img src="https://raw.githubusercontent.com/RecastAI/bot-messenger/master/ressources/S%C3%A9lection_023.png" alt="alt text"></p>
+
+<h2>
+<a id="your-bot" class="anchor" href="#your-bot" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Your bot</h2>
+
+<div class="highlight highlight-source-go"><pre>
+<span class="pl-k">func</span> <span class="pl-en">call_recast</span>(<span class="pl-v">msg</span> <span class="pl-v">string</span>) <span class="pl-v">string</span>  {
+    fmt.<span class="pl-c1">Printf</span>(<span class="pl-s"><span class="pl-pds">"</span>start call to recast<span class="pl-pds">"</span></span>)
+    <span class="pl-smi">client</span> <span class="pl-k">:=</span> &amp;http.<span class="pl-smi">Client</span>{}
+
+    <span class="pl-smi">form</span> <span class="pl-k">:=</span> url.<span class="pl-smi">Values</span>{}
+    form.<span class="pl-c1">Add</span>(<span class="pl-s"><span class="pl-pds">"</span>text<span class="pl-pds">"</span></span>, msg)
+    <span class="pl-smi">req</span>, <span class="pl-smi">err</span> <span class="pl-k">:=</span> http.<span class="pl-c1">NewRequest</span>(<span class="pl-s"><span class="pl-pds">"</span>POST<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>https://api.recast.ai/v2/converse<span class="pl-pds">"</span></span> ,strings.<span class="pl-c1">NewReader</span>(form.<span class="pl-c1">Encode</span>()))
+    <span class="pl-k">if</span> err != <span class="pl-c1">nil</span> {
+        log.<span class="pl-c1">Println</span>(err)
+        <span class="pl-k">return</span> <span class="pl-s"><span class="pl-pds">"</span>err<span class="pl-pds">"</span></span>
+    }
+    req.<span class="pl-smi">Header</span>.<span class="pl-c1">Set</span>(<span class="pl-s"><span class="pl-pds">"</span>Authorization<span class="pl-pds">"</span></span>, fmt.<span class="pl-c1">Sprintf</span>(<span class="pl-s"><span class="pl-pds">"</span>Token ADD_YOUR_TOKEN<span class="pl-pds">"</span></span>))
+    <span class="pl-smi">resp</span>, <span class="pl-smi">err</span> <span class="pl-k">:=</span> client.<span class="pl-c1">Do</span>(req)
+    <span class="pl-k">if</span> err != <span class="pl-c1">nil</span> {
+        log.<span class="pl-c1">Println</span>(err)
+        <span class="pl-k">return</span> <span class="pl-s"><span class="pl-pds">"</span>err<span class="pl-pds">"</span></span>
+    }
+    <span class="pl-smi">body</span>, <span class="pl-smi">err</span> <span class="pl-k">:=</span> ioutil.<span class="pl-c1">ReadAll</span>(resp.<span class="pl-smi">Body</span>)
+    <span class="pl-k">if</span> err != <span class="pl-c1">nil</span> {
+        log.<span class="pl-c1">Println</span>(err)
+        <span class="pl-k">return</span> <span class="pl-s"><span class="pl-pds">"</span>err<span class="pl-pds">"</span></span>
+    }
+    log.<span class="pl-c1">Println</span>(<span class="pl-s"><span class="pl-pds">"</span><span class="pl-cce">\n</span> <span class="pl-cce">\n</span> <span class="pl-pds">"</span></span>,<span class="pl-k">string</span>(body),<span class="pl-s"><span class="pl-pds">"</span><span class="pl-cce">\n</span> <span class="pl-cce">\n</span><span class="pl-pds">"</span></span>)
+    <span class="pl-k">var</span> <span class="pl-smi">rep</span> RecastRep
+    err = json.<span class="pl-c1">Unmarshal</span>(body, &amp;rep)
+
+    <span class="pl-k">if</span> err != <span class="pl-c1">nil</span> {
+        log.<span class="pl-c1">Println</span>(err)
+        <span class="pl-k">return</span> <span class="pl-s"><span class="pl-pds">"</span>err<span class="pl-pds">"</span></span>
+    }
+    <span class="pl-k">return</span> rep.<span class="pl-smi">Results</span>.<span class="pl-smi">Action</span>.<span class="pl-smi">Reply</span>
+
+}
+
+<span class="pl-k">func</span>  <span class="pl-en">message_handler</span>(<span class="pl-v">data</span> <span class="pl-v">Data</span>) {
+    <span class="pl-smi">message</span> <span class="pl-k">:=</span> data.<span class="pl-smi">Entry</span>[<span class="pl-c1">0</span>].<span class="pl-smi">Messaging</span>[<span class="pl-c1">0</span>].<span class="pl-smi">Message</span>.<span class="pl-smi">Text</span>
+    <span class="pl-smi">recipient</span> <span class="pl-k">:=</span> data.<span class="pl-smi">Entry</span>[<span class="pl-c1">0</span>].<span class="pl-smi">Messaging</span>[<span class="pl-c1">0</span>].<span class="pl-smi">Sender</span>.<span class="pl-smi">ID</span>
+    <span class="pl-smi">msg</span> <span class="pl-k">:=</span> <span class="pl-c1">call_recast</span>(message)
+    <span class="pl-c1">post_facebook</span>(msg, recipient)
+}</pre></div>
+
+<ul>
+<li>Have fun coding your bot! :)</li>
+</ul>
+
+<h2>
+<a id="author" class="anchor" href="#author" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Author</h2>
+
+<p>Henri Floren - Recast.AI
+<a href="mailto:henri.floren@recast.ai">henri.floren@recast.ai</a></p>
+      </section>
+
+      <footer>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <p>this project by <a href="https://github.com/fhenri42">fhenri42</a> can be found on <a href="https://github.com/fhenri42/bot-Messenger-golang">GitHub</a></p>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+        <p>Generated with <a href="https://pages.github.com">GitHub Pages</a> using Merlot</p>
+        <span class="octocat"></span>
+      </footer>
+
+    </div>
+
+    
+  </body>
+</html>
