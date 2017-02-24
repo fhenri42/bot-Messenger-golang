@@ -151,5 +151,5 @@ func  message_handler(data Data) {
 
 ## Author
 
-Henri Floren - Recast.AI
-henri.floren@recast.ai
+Henri Floren
+fhenri@student.42.fr
